@@ -89,9 +89,9 @@ export default function ContributorsTable({
               <TableCell isHeader className="px-6 py-3">
                 Tola
               </TableCell>
-              <TableCell isHeader className="px-6 py-3">
+              {/* <TableCell isHeader className="px-6 py-3">
                 Pledges
-              </TableCell>
+              </TableCell> */}
             </TableRow>
           </TableHeader>
 
@@ -111,7 +111,7 @@ export default function ContributorsTable({
                 <TableCell className="px-6 py-4 text-gray-700 dark:text-gray-300">
                   {contributor.tola?.tola_name}
                 </TableCell>
-                <TableCell className="px-6 py-4">
+                {/* <TableCell className="px-6 py-4">
                   {contributor.pledges.length > 0 ? (
                     <div className="flex flex-wrap gap-3">
                       {contributor.pledges.map((pledge, idx) => {
@@ -137,7 +137,7 @@ export default function ContributorsTable({
                   ) : (
                     <span className="text-gray-400">—</span>
                   )}
-                </TableCell>
+                </TableCell> */}
               </TableRow>
             ))}
 

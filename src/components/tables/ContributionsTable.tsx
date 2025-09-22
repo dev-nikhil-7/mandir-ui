@@ -128,7 +128,8 @@ export default function ContributionsTable() {
                   {new Date(c.payment_date).toLocaleDateString("en-IN")}
                 </td>
                 <td className="px-4 py-3 text-right font-semibold">
-                  ₹ {new Intl.NumberFormat("en-IN").format(c.amount)}
+                  {/* ₹ {new Intl.NumberFormat("en-IN").format(c.amount)} */}₹
+                  *******
                 </td>
               </tr>
             ))

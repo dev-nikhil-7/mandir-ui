@@ -25,7 +25,7 @@ const LayoutContent: React.FC = () => {
           <Outlet />
         </div>
         {/* Floating Action Button */}
-        <FAB onClick={() => setIsModalOpen(true)} />
+        {/* <FAB onClick={() => setIsModalOpen(true)} /> */}
 
         {/* Collect Chanda Modal */}
         <CollectChandaModal
