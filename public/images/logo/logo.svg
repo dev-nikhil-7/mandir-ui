@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120" preserveAspectRatio="xMinYMid meet">
+  <!-- Icon: Lotus/Crown -->
+  <g transform="translate(10,20)">
+    <path d="M30 0C26 8 18 14 10 16C12 22 16 28 22 32C20 36 20 42 24 48C28 42 32 36 38 32C44 28 48 22 50 16C42 14 34 8 30 0Z" fill="url(#grad1)"></path>
+    <circle cx="30" cy="12" r="5" fill="#C62828"></circle>
+  </g>
+
+  <!-- Text -->
+  <text x="100" y="75" font-family="Noto Sans Devanagari, sans-serif" font-size="50" font-weight="600" fill="#1D2939">
+    भोजपंडौल भगवती स्थान
+  </text>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="50">
+      <stop offset="0%" stop-color="#FF6B00"></stop>
+      <stop offset="100%" stop-color="#FFD700"></stop>
+    </linearGradient>
+  </defs>
+</svg>
