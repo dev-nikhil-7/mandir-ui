@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router";
 import { useSidebar } from "../context/SidebarContext";
 import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
+
 // import NotificationDropdown from "../components/header/NotificationDropdown";
 // import UserDropdown from "../components/header/UserDropdown";
 
 const AppHeader: React.FC = () => {
+  const { token } = useAuth();
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
 
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
@@ -40,6 +43,13 @@ const AppHeader: React.FC = () => {
     };
   }, []);
 
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); // clear token + localStorage
+    navigate("/signin"); // redirect to login
+  };
   return (
     <header className="sticky top-0 flex w-full bg-white border-gray-200 z-99999 dark:border-gray-800 dark:bg-gray-900 lg:border-b">
       <div className="flex flex-col items-center justify-between grow lg:flex-row lg:px-6">
@@ -164,15 +174,18 @@ const AppHeader: React.FC = () => {
             {/* <!-- Notification Menu Area --> */}
           </div>
           {/* <!-- User Area --> */}
-          {/* <div className="flex justify-end gap-2 2xsm:gap-3">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
-            >
-              Collect Chanda
-            </button>
-          </div> */}
-
+          {token && (
+            <>
+              <div className="flex justify-end gap-2 2xsm:gap-3">
+                <button
+                  onClick={handleLogout}
+                  className="px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600"
+                >
+                  Logout
+                </button>
+              </div>
+            </>
+          )}
           {/* <UserDropdown /> */}
         </div>
       </div>

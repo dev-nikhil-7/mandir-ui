@@ -65,3 +65,13 @@ export const getTolaContributors = async (
 
   return res.data; // Axios returns data inside `res.data`
 };
+
+// Function to get villages
+export const updateContributor = async (
+  tola_id: any,
+  data: any
+): Promise<ContributorsTableProps[]> => {
+  const res = await API.put<any>(`/api/v1/contributors/${tola_id}`, data);
+
+  return res.data; // Axios returns data inside `res.data`
+};

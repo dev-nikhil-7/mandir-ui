@@ -6,7 +6,9 @@ import AppSidebar from "./AppSidebar";
 import FAB from "../components/common/FAB";
 import { useState } from "react";
 import CollectChandaModal from "../components/modals/CollectChandaModal";
+import { useAuth } from "./../context/AuthContext";
 const LayoutContent: React.FC = () => {
+  const { token } = useAuth();
   const { isExpanded, isHovered, isMobileOpen } = useSidebar();
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -24,14 +26,18 @@ const LayoutContent: React.FC = () => {
         <div className="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
           <Outlet />
         </div>
-        {/* Floating Action Button */}
-        {/* <FAB onClick={() => setIsModalOpen(true)} /> */}
-
-        {/* Collect Chanda Modal */}
-        <CollectChandaModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+        {token && (
+          <>
+            {" "}
+            {/* Floating Action Button */}
+            {/* <FAB onClick={() => setIsModalOpen(true)} /> */}
+            {/* Collect Chanda Modal */}
+            {/* <CollectChandaModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            /> */}
+          </>
+        )}
       </div>
     </div>
   );

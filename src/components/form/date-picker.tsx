@@ -3,14 +3,12 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.css";
 import Label from "./Label";
 import { CalenderIcon } from "../../icons";
-import Hook = flatpickr.Options.Hook;
-import DateOption = flatpickr.Options.DateOption;
 
 type PropsType = {
   id: string;
   mode?: "single" | "multiple" | "range" | "time";
-  onChange?: Hook | Hook[];
-  defaultDate?: DateOption;
+  onChange?: (date: Date | null) => void; // ✅ simplified for RHF
+  defaultDate?: Date | string;
   label?: string;
   placeholder?: string;
 };
@@ -30,7 +28,12 @@ export default function DatePicker({
       monthSelectorType: "static",
       dateFormat: "Y-m-d",
       defaultDate,
-      onChange,
+      onChange: (selectedDates) => {
+        // ✅ return only the first date or null
+        if (onChange) {
+          onChange(selectedDates.length ? selectedDates[0] : null);
+        }
+      },
     });
 
     return () => {

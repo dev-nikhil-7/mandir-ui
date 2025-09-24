@@ -35,8 +35,15 @@ const navItems: NavItem[] = [
     name: "Master Data",
     icon: <TableIcon />,
     subItems: [
-      { name: "All Contributors", path: "/all-contributors", pro: false },
-      { name: "All Tolas", path: "/all-tols", pro: false },
+      { name: "Listed Contributors", path: "/all-contributors", pro: false },
+      { name: "Listed Tols", path: "/all-tols", pro: false },
+    ],
+  },
+  {
+    name: "Manage",
+    icon: <ListIcon />,
+    subItems: [
+      { name: "Collect Chanda", path: "/manage-contributions", pro: false },
     ],
   },
   // {

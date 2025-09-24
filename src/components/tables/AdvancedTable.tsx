@@ -6,10 +6,11 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-
+import { useAuth } from "./../../context/AuthContext";
 interface FinancialYear {
   id: number;
   name: number;
+  is_active: boolean;
 }
 
 interface Pledge {
@@ -41,6 +42,7 @@ interface ContributorsTableProps {
 export default function ContributorsTable({
   contributors,
 }: ContributorsTableProps) {
+  const { token } = useAuth();
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const rowsPerPage = 20;
@@ -89,9 +91,11 @@ export default function ContributorsTable({
               <TableCell isHeader className="px-6 py-3">
                 Tola
               </TableCell>
-              {/* <TableCell isHeader className="px-6 py-3">
-                Pledges
-              </TableCell> */}
+              {token && (
+                <TableCell isHeader className="px-6 py-3">
+                  Pledges
+                </TableCell>
+              )}
             </TableRow>
           </TableHeader>
 
@@ -111,33 +115,40 @@ export default function ContributorsTable({
                 <TableCell className="px-6 py-4 text-gray-700 dark:text-gray-300">
                   {contributor.tola?.tola_name}
                 </TableCell>
-                {/* <TableCell className="px-6 py-4">
-                  {contributor.pledges.length > 0 ? (
-                    <div className="flex flex-wrap gap-3">
-                      {contributor.pledges.map((pledge, idx) => {
-                        const colors = [
-                          "from-pink-500 to-rose-500",
-                          "from-blue-500 to-cyan-500",
-                          "from-green-500 to-emerald-500",
-                          "from-purple-500 to-indigo-500",
-                          "from-amber-500 to-orange-500",
-                        ];
-                        const bg = colors[idx % colors.length];
-                        return (
-                          <div
-                            key={pledge.id}
-                            className={`flex items-center gap-2 rounded-full bg-gradient-to-r ${bg} px-4 py-1.5 text-xs font-semibold text-white shadow-md transition-transform hover:scale-105`}
-                          >
-                            <span>{pledge.financial_year?.name}</span>
-                            <span>₹ {pledge.amount}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <span className="text-gray-400">—</span>
-                  )}
-                </TableCell> */}
+
+                {token && (
+                  <>
+                    <TableCell className="px-6 py-4">
+                      {contributor.pledges.length > 0 ? (
+                        <div className="flex flex-wrap gap-3">
+                          {contributor.pledges.map((pledge, idx) => {
+                            if (pledge.financial_year.is_active) {
+                              const colors = [
+                                "from-pink-500 to-rose-500",
+                                "from-blue-500 to-cyan-500",
+                                "from-green-500 to-emerald-500",
+                                "from-purple-500 to-indigo-500",
+                                "from-amber-500 to-orange-500",
+                              ];
+                              const bg = colors[idx % colors.length];
+                              return (
+                                <div
+                                  key={pledge.id}
+                                  className={`flex items-center gap-2 rounded-full bg-gradient-to-r ${bg} px-4 py-1.5 text-xs font-semibold text-white shadow-md transition-transform hover:scale-105`}
+                                >
+                                  <span>{pledge.financial_year?.name}</span>
+                                  <span>₹ {pledge.amount}</span>
+                                </div>
+                              );
+                            }
+                          })}
+                        </div>
+                      ) : (
+                        <span className="text-gray-400">—</span>
+                      )}
+                    </TableCell>
+                  </>
+                )}
               </TableRow>
             ))}
 

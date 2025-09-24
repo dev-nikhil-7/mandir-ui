@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getContributions, Contribution } from "../../api/contributions";
-
+import { useAuth } from "./../../context/AuthContext";
 // Utility to show colored badges for payment mode
 const getPaymentModeBadge = (mode: string) => {
   const base =
@@ -30,6 +30,7 @@ const getPaymentModeBadge = (mode: string) => {
 };
 
 export default function ContributionsTable() {
+  const { token } = useAuth();
   const [contributions, setContributions] = useState<Contribution[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -127,10 +128,19 @@ export default function ContributionsTable() {
                 <td className="px-4 py-3">
                   {new Date(c.payment_date).toLocaleDateString("en-IN")}
                 </td>
-                <td className="px-4 py-3 text-right font-semibold">
-                  {/* ₹ {new Intl.NumberFormat("en-IN").format(c.amount)} */}₹
-                  *******
-                </td>
+                {token ? (
+                  <>
+                    <td className="px-4 py-3 text-right font-semibold">
+                      ₹ {new Intl.NumberFormat("en-IN").format(c.amount)}
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td className="px-4 py-3 text-right font-semibold">
+                      ₹ *****
+                    </td>
+                  </>
+                )}
               </tr>
             ))
           )}

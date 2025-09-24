@@ -56,7 +56,7 @@ export default function MonthlyTarget({
               Durga Pooja Collection
             </h3>
             <p className="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
-              Progress towards pledge target
+              Progress towards estimated collection
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function MonthlyTarget({
         </div>
 
         <p className="mx-auto mt-10 w-full max-w-[380px] text-center text-sm text-gray-500 sm:text-base">
-          Total expected pledge in Durga Pooja 2025
+          Total expected collection in Durga Pooja 2025
         </p>
       </div>
 
