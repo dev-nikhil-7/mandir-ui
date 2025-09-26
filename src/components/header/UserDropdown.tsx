@@ -32,7 +32,7 @@ export default function UserDropdown() {
           height="20"
           viewBox="0 0 18 20"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
         >
           <path
             d="M4.3125 8.65625L9 13.3437L13.6875 8.65625"
@@ -72,7 +72,7 @@ export default function UserDropdown() {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -97,7 +97,7 @@ export default function UserDropdown() {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -122,7 +122,7 @@ export default function UserDropdown() {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -145,7 +145,7 @@ export default function UserDropdown() {
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
           >
             <path
               fillRule="evenodd"

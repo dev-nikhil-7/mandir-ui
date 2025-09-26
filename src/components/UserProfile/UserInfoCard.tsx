@@ -77,7 +77,7 @@ export default function UserInfoCard() {
             height="18"
             viewBox="0 0 18 18"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
           >
             <path
               fillRule="evenodd"
@@ -112,26 +112,26 @@ export default function UserInfoCard() {
                     <Label>Facebook</Label>
                     <Input
                       type="text"
-                      value="https://www.facebook.com/PimjoHQ"
+                      value="httpss://www.facebook.com/PimjoHQ"
                     />
                   </div>
 
                   <div>
                     <Label>X.com</Label>
-                    <Input type="text" value="https://x.com/PimjoHQ" />
+                    <Input type="text" value="httpss://x.com/PimjoHQ" />
                   </div>
 
                   <div>
                     <Label>Linkedin</Label>
                     <Input
                       type="text"
-                      value="https://www.linkedin.com/company/pimjo"
+                      value="httpss://www.linkedin.com/company/pimjo"
                     />
                   </div>
 
                   <div>
                     <Label>Instagram</Label>
-                    <Input type="text" value="https://instagram.com/PimjoHQ" />
+                    <Input type="text" value="httpss://instagram.com/PimjoHQ" />
                   </div>
                 </div>
               </div>
