@@ -28,6 +28,7 @@ export interface Contribution {
   tola_name: string;
   contributor_name: string;
   payment_mode: string;
+  receipt_id: string;
 }
 
 export const getContributions = async (): Promise<Contribution[]> => {

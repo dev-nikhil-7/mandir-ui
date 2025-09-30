@@ -54,6 +54,7 @@ export default function ContributionsTable() {
     const fetchData = async () => {
       try {
         const data = await getContributions();
+
         setContributions(data);
       } catch (err) {
         console.error("Error fetching contributions:", err);
@@ -98,6 +99,7 @@ export default function ContributionsTable() {
             <th className="px-4 py-3">Contributor</th>
             <th className="px-4 py-3">Payment Mode</th>
             <th className="px-4 py-3">Payment Date</th>
+            <th className="px-4 py-3">Receipt Number</th>
             <th className="px-4 py-3 text-right">Amount (₹)</th>
           </tr>
         </thead>
@@ -128,6 +130,7 @@ export default function ContributionsTable() {
                 <td className="px-4 py-3">
                   {new Date(c.payment_date).toLocaleDateString("en-IN")}
                 </td>
+                <td className="px-4 py-3">{c.receipt_id}</td>
                 {token ? (
                   <>
                     <td className="px-4 py-3 text-right font-semibold">
