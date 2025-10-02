@@ -46,6 +46,11 @@ const navItems: NavItem[] = [
       { name: "Collect Chanda", path: "/manage-contributions", pro: false },
     ],
   },
+  {
+    name: "Reports",
+    icon: <ListIcon />,
+    subItems: [{ name: "Payments", path: "/payments", pro: false }],
+  },
   // {
   //   name: "Pages",
   //   icon: <PageIcon />,

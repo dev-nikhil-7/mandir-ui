@@ -1,5 +1,5 @@
 import API from "./client";
-// import { ContributionCreate, ContributionResponse } from "../types/contribution";
+
 export interface ContributionCreate {
   tola_id: number;
   contributor_id: number;
@@ -14,6 +14,7 @@ export interface ContributionResponse extends ContributionCreate {
   created_at: string;
   updated_at: string;
 }
+
 export const createContribution = async (
   data: ContributionCreate
 ): Promise<ContributionResponse> => {
@@ -33,5 +34,41 @@ export interface Contribution {
 
 export const getContributions = async (): Promise<Contribution[]> => {
   const res = await API.get("/api/v1/contributions");
+  return res.data;
+};
+
+/* ---------------------  PAYMENTS API --------------------- */
+
+export interface PaymentContributor {
+  contributor_id: number;
+  contributor_name: string;
+  pledged_amount: number;
+  paid_amount: number;
+  percent_diff: number;
+  tola?: {
+    id: number;
+    tola_name: string;
+  };
+}
+
+export interface PaymentsSummary {
+  total_pledged: number;
+  total_paid: number;
+  total_percent_diff: number;
+}
+
+export interface PaymentsResponse {
+  contributors: PaymentContributor[];
+  summary: PaymentsSummary;
+}
+
+/**
+ * Fetch payments for a specific tola
+ * @param tolaId required tola id
+ */
+export const getPayments = async (
+  tolaId: number
+): Promise<PaymentsResponse> => {
+  const res = await API.get(`/api/v1/contributions/tola/${tolaId}/payments`);
   return res.data;
 };

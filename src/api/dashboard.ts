@@ -11,7 +11,7 @@ export interface DashboardResponse {
   tol_wise_pledge: TolaWisePledge[];
 }
 
-export const getDashboard = async (): Promise<DashboardResponse> => {
-  const res = await API.get<DashboardResponse>("/api/v1/dashboard");
+export const getDashboard = async (): Promise<any> => {
+  const res = await API.get<any>("/api/v1/dashboard");
   return res.data;
 };

@@ -8,6 +8,8 @@ import PageMeta from "../../components/common/PageMeta";
 import { useEffect, useState } from "react";
 import { getDashboard } from "../../api/dashboard";
 import ContributionsTable from "../../components/tables/ContributionsTable";
+import TableGraph from "../../components/tables/TableGraph";
+
 export interface TolaWisePledge {
   tola_name: string;
   total_amount: number;
@@ -58,6 +60,22 @@ export default function Home() {
             todayCollected={dashboardData.today_collected}
             totalPledge={dashboardData.total_pledge}
           />
+        </div>
+        <div className="col-span-12">
+          <div className="bg-white shadow rounded-xl p-4 overflow-x-auto">
+            <TableGraph
+              data={dashboardData.tol_wise_pledge.map((pledge: any) => {
+                const match = dashboardData.tol_wise_collection.find(
+                  (c: any) => c.tola_name === pledge.tola_name
+                );
+                return {
+                  tola_name: pledge.tola_name,
+                  total_pledged: pledge.total_amount,
+                  total_collected: match ? match.total_collected : 0,
+                };
+              })}
+            />
+          </div>
         </div>
 
         <div className="col-span-12 xl:col-span-12">

@@ -15,6 +15,7 @@ import Calendar from "./pages/Calendar";
 import BasicTables from "./pages/Tables/BasicTables";
 import FormElements from "./pages/Forms/FormElements";
 import ContributorPage from "./pages/Tables/AdvanceTable";
+import Payments from "./pages/Tables/PaymentsTable";
 import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
@@ -44,6 +45,14 @@ export default function App() {
                 element={
                   <PrivateRoute>
                     <FormElements />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/payments"
+                element={
+                  <PrivateRoute>
+                    <Payments />
                   </PrivateRoute>
                 }
               />
