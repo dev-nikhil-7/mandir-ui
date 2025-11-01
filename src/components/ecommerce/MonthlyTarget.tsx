@@ -4,14 +4,14 @@ import { ApexOptions } from "apexcharts";
 interface MonthlyTargetProps {
   collectedPercent: number;
   totalCollected: number;
-  todayCollected: number;
+  total_expense: number;
   totalPledge: number;
 }
 
 export default function MonthlyTarget({
   collectedPercent,
   totalCollected,
-  todayCollected,
+  total_expense,
   totalPledge,
 }: MonthlyTargetProps) {
   const series = [collectedPercent];
@@ -105,10 +105,10 @@ export default function MonthlyTarget({
         {/* Today Collected */}
         <div>
           <p className="mb-1 text-center text-gray-500 text-theme-xs dark:text-gray-400 sm:text-sm">
-            Today
+            Total Expense
           </p>
           <p className="flex items-center justify-center gap-1 text-base font-semibold text-gray-800 dark:text-white/90 sm:text-lg">
-            ₹ {new Intl.NumberFormat("en-IN").format(todayCollected)}
+            ₹ {new Intl.NumberFormat("en-IN").format(total_expense)}
           </p>
         </div>
       </div>

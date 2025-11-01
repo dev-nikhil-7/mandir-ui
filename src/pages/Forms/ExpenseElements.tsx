@@ -22,12 +22,6 @@ export default function FormElements() {
       <PageBreadcrumb pageTitle="Manage Chanda" />
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <DefaultInputs />
-        </div>
-        <div className="space-y-6">
-          <InputGroup />
-        </div>
-        <div className="space-y-6">
           <ExpenseForm />
         </div>
       </div>

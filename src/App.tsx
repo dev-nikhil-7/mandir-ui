@@ -14,6 +14,7 @@ import BarChart from "./pages/Charts/BarChart";
 import Calendar from "./pages/Calendar";
 import BasicTables from "./pages/Tables/BasicTables";
 import FormElements from "./pages/Forms/FormElements";
+import ExpenseElements from "./pages/Forms/ExpenseElements";
 import ContributorPage from "./pages/Tables/AdvanceTable";
 import Payments from "./pages/Tables/PaymentsTable";
 import Blank from "./pages/Blank";
@@ -45,6 +46,14 @@ export default function App() {
                 element={
                   <PrivateRoute>
                     <FormElements />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/manage-expenses"
+                element={
+                  <PrivateRoute>
+                    <ExpenseElements />
                   </PrivateRoute>
                 }
               />

@@ -8,6 +8,7 @@ import PageMeta from "../../components/common/PageMeta";
 import { useEffect, useState } from "react";
 import { getDashboard } from "../../api/dashboard";
 import ContributionsTable from "../../components/tables/ContributionsTable";
+import ExpenseTable from "../../components/tables/Expenses";
 import TableGraph from "../../components/tables/TableGraph";
 
 export interface TolaWisePledge {
@@ -57,7 +58,7 @@ export default function Home() {
           <MonthlyTarget
             collectedPercent={dashboardData.collected_percent}
             totalCollected={dashboardData.total_collected}
-            todayCollected={dashboardData.today_collected}
+            total_expense={dashboardData.total_expense}
             totalPledge={dashboardData.total_pledge}
           />
         </div>
@@ -80,6 +81,9 @@ export default function Home() {
 
         <div className="col-span-12 xl:col-span-12">
           <ContributionsTable />
+        </div>
+        <div className="col-span-12 xl:col-span-12">
+          <ExpenseTable />
         </div>
       </div>
     </>

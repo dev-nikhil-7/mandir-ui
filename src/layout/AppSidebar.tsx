@@ -44,6 +44,7 @@ const navItems: NavItem[] = [
     icon: <ListIcon />,
     subItems: [
       { name: "Collect Chanda", path: "/manage-contributions", pro: false },
+      { name: "Add Expense", path: "/manage-expenses", pro: false },
     ],
   },
   {
