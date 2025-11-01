@@ -92,12 +92,12 @@ export default function ExpensesTable() {
         <thead className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-500 text-white">
           <tr>
             <th className="px-4 py-3">#</th>
-            <th className="px-4 py-3">Type</th>
+            {/* <th className="px-4 py-3">Type</th> */}
             <th className="px-4 py-3">Description</th>
-            <th className="px-4 py-3">Paid By</th>
-            <th className="px-4 py-3">Approved By</th>
+            {/* <th className="px-4 py-3">Paid By</th> */}
+            {/* <th className="px-4 py-3">Approved By</th> */}
             <th className="px-4 py-3">Payment Mode</th>
-            <th className="px-4 py-3">Date</th>
+            {/* <th className="px-4 py-3">Date</th> */}
             <th className="px-4 py-3 text-right">Amount (₹)</th>
           </tr>
         </thead>
@@ -120,18 +120,18 @@ export default function ExpensesTable() {
                 <td className="px-4 py-3">
                   {(page - 1) * rowsPerPage + index + 1}
                 </td>
-                <td className="px-4 py-3">{e.expense_type}</td>
+                {/* <td className="px-4 py-3">{e.expense_type}</td> */}
                 <td className="px-4 py-3">{e.description}</td>
-                <td className="px-4 py-3">{e.paid_by}</td>
-                <td className="px-4 py-3">{e.approved_by}</td>
+                {/* <td className="px-4 py-3">{e.paid_by}</td>
+                <td className="px-4 py-3">{e.approved_by}</td> */}
                 <td className="px-4 py-3">
                   {getPaymentModeBadge(e.payment_mode)}
                 </td>
-                <td className="px-4 py-3">
+                {/* <td className="px-4 py-3">
                   {e.date_of_expense
                     ? new Date(e.date_of_expense).toLocaleDateString("en-IN")
                     : "-"}
-                </td>
+                </td> */}
                 {token ? (
                   <td className="px-4 py-3 text-right font-semibold">
                     ₹ {new Intl.NumberFormat("en-IN").format(e.amount)}

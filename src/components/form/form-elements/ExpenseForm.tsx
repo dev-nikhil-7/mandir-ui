@@ -11,11 +11,11 @@ import API from "../../../api/client";
 const schema = z.object({
   amount: z.coerce.number().positive("Amount must be greater than 0"),
   description: z.string().min(1, "Description is required"),
-  expense_type: z.string().min(1, "Expense type is required"),
-  paid_by: z.string().min(1, "Paid by is required"),
-  approved_by: z.string().min(1, "Approved by is required"),
-  payment_mode: z.string().min(1, "Payment mode is required"),
-  date_of_expense: z.string().min(1, "Date of expense is required"),
+  //   expense_type: z.string().min(1, "Expense type is required"),
+  //   paid_by: z.string().min(1, "Paid by is required"),
+  //   approved_by: z.string().min(1, "Approved by is required"),
+  //   payment_mode: z.string().min(1, "Payment mode is required"),
+  //   date_of_expense: z.string().min(1, "Date of expense is required"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -31,11 +31,11 @@ export default function ExpenseForm() {
     defaultValues: {
       amount: 0,
       description: "",
-      expense_type: "",
-      paid_by: "",
-      approved_by: "",
-      payment_mode: "",
-      date_of_expense: "",
+      //   expense_type: "",
+      //   paid_by: "",
+      //   approved_by: "",
+      //   payment_mode: "",
+      //   date_of_expense: "",
     },
   });
 
@@ -54,11 +54,11 @@ export default function ExpenseForm() {
       reset({
         amount: 0,
         description: "",
-        expense_type: "",
-        paid_by: "",
-        approved_by: "",
-        payment_mode: "",
-        date_of_expense: "",
+        // expense_type: "",
+        // paid_by: "",
+        // approved_by: "",
+        // payment_mode: "",
+        // date_of_expense: "",
       });
     } catch (err) {
       console.error(err);
@@ -102,7 +102,7 @@ export default function ExpenseForm() {
         </div>
 
         {/* Expense Type */}
-        <div>
+        {/* <div>
           <Label>Expense Type</Label>
           <Controller
             name="expense_type"
@@ -120,10 +120,10 @@ export default function ExpenseForm() {
               {errors.expense_type.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Paid By */}
-        <div>
+        {/* <div>
           <Label>Paid By</Label>
           <Controller
             name="paid_by"
@@ -137,10 +137,10 @@ export default function ExpenseForm() {
               {errors.paid_by.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Approved By */}
-        <div>
+        {/* <div>
           <Label>Approved By</Label>
           <Controller
             name="approved_by"
@@ -154,10 +154,10 @@ export default function ExpenseForm() {
               {errors.approved_by.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Payment Mode */}
-        <div>
+        {/* <div>
           <Label>Payment Mode</Label>
           <Controller
             name="payment_mode"
@@ -175,10 +175,10 @@ export default function ExpenseForm() {
               {errors.payment_mode.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Date of Expense */}
-        <div>
+        {/* <div>
           <Label>Date of Expense</Label>
           <Controller
             name="date_of_expense"
@@ -192,7 +192,7 @@ export default function ExpenseForm() {
               {errors.date_of_expense.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Buttons */}
         <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
