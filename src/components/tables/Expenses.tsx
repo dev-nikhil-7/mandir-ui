@@ -132,15 +132,9 @@ export default function ExpensesTable() {
                     ? new Date(e.date_of_expense).toLocaleDateString("en-IN")
                     : "-"}
                 </td> */}
-                {token ? (
-                  <td className="px-4 py-3 text-right font-semibold">
-                    ₹ {new Intl.NumberFormat("en-IN").format(e.amount)}
-                  </td>
-                ) : (
-                  <td className="px-4 py-3 text-right font-semibold">
-                    ₹ *****
-                  </td>
-                )}
+                <td className="px-4 py-3 text-right font-semibold">
+                  ₹ {new Intl.NumberFormat("en-IN").format(e.amount)}
+                </td>
               </tr>
             ))
           )}
